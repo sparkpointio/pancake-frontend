@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
+import { Box, Skeleton } from '@pancakeswap/uikit'
+import { Flex, Heading } from '@sparkpointio/sparkswap-uikit'
 import { LotteryStatus } from 'config/constants/types'
 import PageSection from 'components/PageSection'
 import { useTranslation } from 'contexts/Localization'
@@ -57,7 +58,7 @@ const Lottery = () => {
       >
         <Flex alignItems="center" justifyContent="center" flexDirection="column" pt="24px">
           {status === LotteryStatus.OPEN && (
-            <Heading scale="xl" color="#ffffff" mb="24px" textAlign="center">
+            <Heading color="#ffffff" mb="24px">
               {t('Get your tickets now!')}
             </Heading>
           )}
@@ -84,10 +85,8 @@ const Lottery = () => {
         hasCurvedDivider={false}
         index={2}
       >
-        <Flex width="100%" flexDirection="column" alignItems="center" justifyContent="center">
-          <Heading mb="24px" scale="xl">
-            {t('Finished Rounds')}
-          </Heading>
+        <Flex style={{ width: '100%' }} flexDirection="column" alignItems="center" justifyContent="center">
+          <Heading mb="24px">{t('Finished Rounds')}</Heading>
           <Box mb="24px">
             <HistoryTabMenu
               activeIndex={historyTabMenuIndex}

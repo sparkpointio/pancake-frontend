@@ -1,45 +1,42 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import { Menu as UikitMenu } from '@pancakeswap/uikit'
+import { useWeb3React } from '@web3-react/core'
+import { Menu as UikitMenu } from '@sparkpointio/sparkswap-uikit'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import PhishingWarningBanner from 'components/PhishingWarningBanner'
 import useTheme from 'hooks/useTheme'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import useAuth from 'hooks/useAuth'
 import { usePhishingBannerManager } from 'state/user/hooks'
-import config from './config/config'
+import config from './config'
 import UserMenu from './UserMenu'
 import GlobalSettings from './GlobalSettings'
 import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 import { footerLinks } from './config/footerConfig'
 
 const Menu = (props) => {
+  const { account } = useWeb3React()
   const { isDark, toggleTheme } = useTheme()
-  const cakePriceUsd = usePriceCakeBusd()
+  const { login, logout } = useAuth()
   const { currentLanguage, setLanguage, t } = useTranslation()
   const { pathname } = useLocation()
   const [showPhishingWarningBanner] = usePhishingBannerManager()
 
-  const activeMenuItem = getActiveMenuItem({ menuConfig: config(t), pathname })
-  const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
+  // const activeMenuItem = getActiveMenuItem({ menuConfig: config(t), pathname })
+  // const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
 
   return (
     <UikitMenu
-      userMenu={<UserMenu />}
+      account={account}
+      login={login}
+      logout={logout}
       globalMenu={<GlobalSettings />}
-      banner={showPhishingWarningBanner && <PhishingWarningBanner />}
       isDark={isDark}
       toggleTheme={toggleTheme}
       currentLang={currentLanguage.code}
       langs={languageList}
       setLang={setLanguage}
-      cakePriceUsd={cakePriceUsd.toNumber()}
-      links={config(t)}
-      subLinks={activeMenuItem?.hideSubNav ? [] : activeMenuItem?.items}
-      footerLinks={footerLinks(t)}
-      activeItem={activeMenuItem?.href}
-      activeSubItem={activeSubMenuItem?.href}
-      buyCakeLabel={t('Buy CAKE')}
+      links={config}
       {...props}
     />
   )
