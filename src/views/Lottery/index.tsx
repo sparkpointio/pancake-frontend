@@ -45,7 +45,7 @@ const Lottery = () => {
 
   return (
     <LotteryPage>
-      <PageSection background={TITLE_BG} index={1} hasCurvedDivider={false}>
+      <PageSection background={theme.colors.background} index={1}>
         <Hero />
       </PageSection>
       <PageSection
