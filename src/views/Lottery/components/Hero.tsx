@@ -81,8 +81,7 @@ const PrizeTotalBalance = styled(Balance)`
 `
 
 const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
-  background: ${({ theme, disabled }) =>
-    disabled ? theme.colors.disabled : theme.colors.primary};
+  background: ${({ theme, disabled }) => (disabled ? theme.colors.disabled : theme.colors.primary)};
   width: 200px;
   border-radius: 0px;
   ${({ theme }) => theme.mediaQueries.xs} {
