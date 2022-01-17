@@ -263,7 +263,13 @@ const Hero = () => {
       </Heading>
       {getHeroHeading()}
       <Flex
-      style ={{position: 'relative', width: '240px 288px', height: '94px 113px', alignItems: 'center', justifyContent: 'center'}}
+        style={{
+          position: 'relative',
+          width: '240px 288px',
+          height: '94px 113px',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
         // position="relative"
         // width={['240px', '288px']}
         // height={['94px', '113px']}
