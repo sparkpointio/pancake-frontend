@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
+import { Box } from '@pancakeswap/uikit'
+import { Flex, Heading, Skeleton } from '@sparkpointio/sparkswap-uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -234,14 +235,14 @@ const Hero = () => {
           ) : (
             <PrizeTotalBalance fontSize="64px" bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
           )}
-          <Heading mb="32px" scale="lg" color="primary">
+          <Heading mb="32px" size="lg" color="primary">
             {t('in prizes!')}
           </Heading>
         </>
       )
     }
     return (
-      <Heading mb="24px" scale="xl" color="#ffffff">
+      <Heading mb="24px" size="xl" color="#ffffff">
         {t('Tickets on sale soon')}
       </Heading>
     )
@@ -257,16 +258,17 @@ const Hero = () => {
         <img src="/images/lottery/ticket-l.png" width="123px" height="83px" alt="" />
         <img src="/images/lottery/ticket-r.png" width="121px" height="72px" alt="" />
       </StarsDecorations> */}
-      <Heading mb="8px" scale="xl" color="primary" id="lottery-hero-title">
+      <Heading mb="8px" size="xl" color="primary" id="lottery-hero-title">
         {t('The SparkSwap Lottery')}
       </Heading>
       {getHeroHeading()}
       <Flex
-        position="relative"
-        width={['240px', '288px']}
-        height={['94px', '113px']}
-        alignItems="center"
-        justifyContent="center"
+      style ={{position: 'relative', width: '240px 288px', height: '94px 113px', alignItems: 'center', justifyContent: 'center'}}
+        // position="relative"
+        // width={['240px', '288px']}
+        // height={['94px', '113px']}
+        // alignItems="center"
+        // justifyContent="center"
       >
         <ButtonWrapper>
           <StyledBuyTicketButton disabled={ticketBuyIsDisabled} />

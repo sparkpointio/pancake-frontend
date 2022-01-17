@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
+import { AutoRenewIcon } from '@pancakeswap/uikit'
+import { Button, Heading, Flex, useModal } from '@sparkpointio/sparkswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { FetchStatus, LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
@@ -67,10 +68,10 @@ const CheckPrizesSection = () => {
         <Flex alignItems="center" justifyContent="center">
           <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column" alignItems="center">
-            <Heading textAlign="center" color="#F4EEFF">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF">
               {t('Connect your wallet')}
             </Heading>
-            <Heading textAlign="center" color="#F4EEFF" mb="24px">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF" mb="24px">
               {t("to check if you've won!")}
             </Heading>
             <ConnectWalletButton width="190px" />
@@ -84,10 +85,10 @@ const CheckPrizesSection = () => {
         <Flex alignItems="center" justifyContent="center">
           <TornTicketImage src="/images/lottery/torn-ticket-l.png" alt="torn lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column">
-            <Heading textAlign="center" color="#F4EEFF">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF">
               {t('No prizes to collect')}...
             </Heading>
-            <Heading textAlign="center" color="#F4EEFF">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF">
               {t('Better luck next time!')}
             </Heading>
           </Flex>
@@ -100,10 +101,10 @@ const CheckPrizesSection = () => {
         <Flex alignItems="center" justifyContent="center">
           <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
           <Flex mx={['4px', null, '16px']} flexDirection="column">
-            <Heading textAlign="center" color="#F4EEFF">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF">
               {t('Congratulations!')}
             </Heading>
-            <Heading textAlign="center" color="#F4EEFF">
+            <Heading style={{textAlign: 'center' }} color="#F4EEFF">
               {t('Why not play again')}
             </Heading>
           </Flex>
@@ -124,7 +125,7 @@ const CheckPrizesSection = () => {
       <Flex alignItems="center" justifyContent="center">
         <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
         <Flex mx={['4px', null, '16px']} flexDirection="column">
-          <Heading textAlign="center" color="#F4EEFF" mb="24px">
+          <Heading style={{textAlign: 'center' }} color="#F4EEFF" mb="24px">
             {t('Are you a winner?')}
           </Heading>
           <Button
