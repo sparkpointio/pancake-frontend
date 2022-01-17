@@ -6,7 +6,8 @@ import { useWeb3React } from '@web3-react/core'
 import { FetchStatus, LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
+import UnlockButton from 'components/UnlockButton'
 import ClaimPrizesModal from './ClaimPrizesModal'
 import useGetUnclaimedRewards from '../hooks/useGetUnclaimedRewards'
 
@@ -74,7 +75,7 @@ const CheckPrizesSection = () => {
             <Heading style={{ textAlign: 'center' }} color="#F4EEFF" mb="24px">
               {t("to check if you've won!")}
             </Heading>
-            <ConnectWalletButton width="190px" />
+            <UnlockButton width="190px" />
           </Flex>
           <TicketImage src="/images/lottery/ticket-r.png" alt="lottery ticket" />
         </Flex>
