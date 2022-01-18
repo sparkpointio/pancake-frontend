@@ -2,18 +2,8 @@ import React, { useEffect, useState, useMemo, useCallback } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
-import {
-  Modal,
-  Text,
-  Flex,
-  HelpIcon,
-  BalanceInput,
-  Ticket,
-  useTooltip,
-  Skeleton,
-  Button,
-  ArrowForwardIcon,
-} from '@pancakeswap/uikit'
+import { Modal, Text, Flex, HelpIcon, Ticket, Skeleton, Button, ArrowForwardIcon } from '@sparkpointio/sparkswap-uikit'
+import { BalanceInput, useTooltip } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import tokens from 'config/constants/tokens'
@@ -309,11 +299,11 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
   }
 
   return (
-    <StyledModal title={t('Buy Tickets')} onDismiss={onDismiss} headerBackground={theme.colors.gradients.cardHeader}>
+    <StyledModal title={t('Buy Tickets')} onDismiss={onDismiss}>
       {tooltipVisible && tooltip}
       <Flex alignItems="center" justifyContent="space-between" mb="8px">
         <Text color="textSubtle">{t('Buy')}:</Text>
-        <Flex alignItems="center" minWidth="70px">
+        <Flex alignItems="center">
           <Text mr="4px" bold>
             {t('Tickets')}
           </Text>
@@ -391,10 +381,10 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
         </Flex>
         <Flex mb="8px" justifyContent="space-between">
           <Flex>
-            <Text display="inline" bold fontSize="14px" mr="4px">
+            <Text bold fontSize="14px" mr="4px">
               {discountValue && totalCost ? percentageDiscount() : 0}%
             </Text>
-            <Text display="inline" color="textSubtle" fontSize="14px">
+            <Text color="textSubtle" fontSize="14px">
               {t('Bulk discount')}
             </Text>
             <Flex alignItems="center" justifyContent="center" ref={targetRef}>
@@ -405,7 +395,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
             ~{discountValue} CAKE
           </Text>
         </Flex>
-        <Flex borderTop={`1px solid ${theme.colors.cardBorder}`} pt="8px" mb="24px" justifyContent="space-between">
+        <Flex pt="8px" mb="24px" justifyContent="space-between">
           <Text color="textSubtle" fontSize="16px">
             {t('You pay')}
           </Text>

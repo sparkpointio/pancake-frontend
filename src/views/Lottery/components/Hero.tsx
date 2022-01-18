@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
+import { Box } from '@pancakeswap/uikit'
+import { Flex, Heading, Skeleton } from '@sparkpointio/sparkswap-uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -75,15 +76,15 @@ const TicketContainer = styled(Flex)`
 `
 
 const PrizeTotalBalance = styled(Balance)`
-  background: ${({ theme }) => theme.colors.gradients.gold};
+  background: ${({ theme }) => 'rgb(249 190 39)'};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
 
 const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
-  background: ${({ theme, disabled }) =>
-    disabled ? theme.colors.disabled : 'linear-gradient(180deg, #7645d9 0%, #452a7a 100%)'};
+  background: ${({ theme, disabled }) => (disabled ? theme.colors.disabled : theme.colors.primary)};
   width: 200px;
+  border-radius: 0px;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: 240px;
   }
@@ -92,9 +93,9 @@ const StyledBuyTicketButton = styled(BuyTicketsButton)<{ disabled: boolean }>`
 const ButtonWrapper = styled.div`
   z-index: 1;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-4deg);
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%) rotate(-4deg);
 `
 
 const TicketSvgWrapper = styled.div`
@@ -222,6 +223,7 @@ const Hero = () => {
   const cakePriceBusd = usePriceCakeBusd()
   const prizeInBusd = amountCollectedInCake.times(cakePriceBusd)
   const prizeTotal = getBalanceNumber(prizeInBusd)
+  console.log(prizeTotal)
   const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
 
   const getHeroHeading = () => {
@@ -233,14 +235,14 @@ const Hero = () => {
           ) : (
             <PrizeTotalBalance fontSize="64px" bold prefix="$" value={prizeTotal} mb="8px" decimals={0} />
           )}
-          <Heading mb="32px" scale="lg" color="#ffffff">
+          <Heading mb="32px" size="lg" color="primary">
             {t('in prizes!')}
           </Heading>
         </>
       )
     }
     return (
-      <Heading mb="24px" scale="xl" color="#ffffff">
+      <Heading mb="24px" size="xl" color="#ffffff">
         {t('Tickets on sale soon')}
       </Heading>
     )
@@ -249,31 +251,40 @@ const Hero = () => {
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="center">
       <Decorations />
-      <StarsDecorations display={['none', 'none', 'block']}>
+      {/* <StarsDecorations display={['none', 'none', 'block']}>
         <img src="/images/lottery/star-big.png" width="124px" height="109px" alt="" />
         <img src="/images/lottery/star-small.png" width="70px" height="62px" alt="" />
         <img src="/images/lottery/three-stars.png" width="130px" height="144px" alt="" />
         <img src="/images/lottery/ticket-l.png" width="123px" height="83px" alt="" />
         <img src="/images/lottery/ticket-r.png" width="121px" height="72px" alt="" />
-      </StarsDecorations>
-      <Heading mb="8px" scale="md" color="#ffffff" id="lottery-hero-title">
-        {t('The PancakeSwap Lottery')}
+      </StarsDecorations> */}
+      <Heading mb="8px" size="xl" color="primary" id="lottery-hero-title">
+        {t('The SparkSwap Lottery')}
       </Heading>
       {getHeroHeading()}
-      <TicketContainer
-        position="relative"
-        width={['240px', '288px']}
-        height={['94px', '113px']}
-        alignItems="center"
-        justifyContent="center"
+      <Flex
+        style={{
+          position: 'relative',
+          width: '240px 288px',
+          height: '94px 113px',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        // position="relative"
+        // width={['240px', '288px']}
+        // height={['94px', '113px']}
+        // alignItems="center"
+        // justifyContent="center"
       >
         <ButtonWrapper>
           <StyledBuyTicketButton disabled={ticketBuyIsDisabled} />
         </ButtonWrapper>
+        {/* Ticket like design
+        
         <TicketSvgWrapper>
           <TicketPurchaseCard width="100%" />
-        </TicketSvgWrapper>
-      </TicketContainer>
+        </TicketSvgWrapper> */}
+      </Flex>
     </Flex>
   )
 }

@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {
+  Box,
+  CardFooter,
+  ExpandableLabel,
+} from '@pancakeswap/uikit'
+import {
   Card,
   CardHeader,
   CardBody,
@@ -10,10 +15,7 @@ import {
   Skeleton,
   Button,
   useModal,
-  Box,
-  CardFooter,
-  ExpandableLabel,
-} from '@pancakeswap/uikit'
+} from '@sparkpointio/sparkswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
@@ -76,7 +78,8 @@ const NextDrawCard = () => {
   const getPrizeBalances = () => {
     if (status === LotteryStatus.CLOSE || status === LotteryStatus.CLAIMABLE) {
       return (
-        <Heading scale="xl" color="secondary" textAlign={['center', null, null, 'left']}>
+        // <Heading size="xl" color="secondary" textAlign={['center', null, null, 'left']}>
+          <Heading size="xl" color="secondary">
           {t('Calculating')}...
         </Heading>
       )
@@ -166,24 +169,25 @@ const NextDrawCard = () => {
               >
                 {account && (
                   <Flex justifyContent={['center', null, null, 'flex-start']}>
-                    <Text display="inline">{youHaveText} </Text>
+                    <Text style={{ display: 'inline' }}> {youHaveText} </Text>
                     {!userTickets.isLoading ? (
                       <Balance value={userTicketCount} decimals={0} display="inline" bold mx="4px" />
                     ) : (
                       <Skeleton mx="4px" height={20} width={40} />
                     )}
-                    <Text display="inline"> {ticketsThisRoundText}</Text>
+                    <Text style={{ display: 'inline' }}> {ticketsThisRoundText}</Text>
                   </Flex>
                 )}
                 {!userTickets.isLoading && userTicketCount > 0 && (
                   <Button
                     onClick={onPresentViewTicketsModal}
-                    height="auto"
-                    width="fit-content"
+                    style={{height: 'auto', width: 'fit-content'}}
+                    // height="auto"
+                    // width="fit-content"
                     p="0"
                     mb={['32px', null, null, '0']}
                     variant="text"
-                    scale="sm"
+                    size="sm"
                   >
                     {t('View your tickets')}
                   </Button>
