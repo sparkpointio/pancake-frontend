@@ -17,7 +17,7 @@ const StyledTimerFlex = styled(Flex)<{ showTooltip?: boolean }>`
 `
 
 const StyledTimerText = styled(Heading)`
-  background: ${({ theme }) => theme.colors.gradients.gold};
+  background: ${({ theme }) => '#f9c132'};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `

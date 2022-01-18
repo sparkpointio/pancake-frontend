@@ -223,7 +223,7 @@ const Hero = () => {
   const cakePriceBusd = usePriceCakeBusd()
   const prizeInBusd = amountCollectedInCake.times(cakePriceBusd)
   const prizeTotal = getBalanceNumber(prizeInBusd)
-  console.log(prizeTotal)
+
   const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
 
   const getHeroHeading = () => {
