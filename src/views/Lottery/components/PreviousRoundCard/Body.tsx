@@ -1,18 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  Box,
+  BunnyPlaceholderIcon,
+} from '@pancakeswap/uikit'
+import {
   CardBody,
   Heading,
   Flex,
   Skeleton,
   Text,
-  Box,
   Button,
   useModal,
   CardRibbon,
   useMatchBreakpoints,
-  BunnyPlaceholderIcon,
-} from '@pancakeswap/uikit'
+} from '@sparkpointio/sparkswap-uikit'
 import { LotteryRound } from 'state/types'
 import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
 import { LotteryStatus } from 'config/constants/types'
@@ -85,7 +87,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
         <Flex justifyContent={['center', null, null, 'flex-start']}>
           <Heading mb="24px">{t('Winning Number')}</Heading>
         </Flex>
-        <Flex maxWidth={['240px', null, null, '100%']} justifyContent={['center', null, null, 'flex-start']}>
+        <Flex style={{ maxWidth: '240px, null, null, 100%', justifyContent: 'center, null, null, flex-start' }} >
           {lotteryId ? (
             lotteryNodeData ? (
               <WinningNumbers
@@ -104,7 +106,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
             )
           ) : (
             <>
-              <Flex flexDirection="column" alignItems="center" width={['240px', null, null, '480px']}>
+              <Flex flexDirection="column" alignItems="center" style={{ width: '240px, null, null, 480px'}} >
                 <Text mb="8px">{t('Please specify Round')}</Text>
                 <BunnyPlaceholderIcon height="64px" width="64px" />
               </Flex>
@@ -122,19 +124,18 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
               alignItems={['center', null, null, 'flex-start']}
             >
               <Box mt={['32px', null, null, 0]}>
-                <Text display="inline">{youHadText} </Text>
-                <Text display="inline" bold>
+                <Text style={{ display: 'inline' }} >{youHadText} </Text>
+                <Text style={{ display: 'inline' }} bold>
                   {userDataForRound.totalTickets}
                 </Text>
-                <Text display="inline">{ticketsThisRoundText}</Text>
+                <Text style={{ display: 'inline' }}>{ticketsThisRoundText}</Text>
               </Box>
               <Button
                 onClick={onPresentViewTicketsModal}
-                height="auto"
-                width="fit-content"
+                style={{ height: 'auto', width: 'fit-content' }}
                 p="0"
                 variant="text"
-                scale="sm"
+                size="sm"
               >
                 {t('View your tickets')}
               </Button>
