@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text, Heading, useMatchBreakpoints, Link, Image } from '@pancakeswap/uikit'
+import { Box } from '@pancakeswap/uikit'
+import { Flex, Text, Heading, useMatchBreakpoints, Link, Image } from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import { BallWithNumber, MatchExampleA, MatchExampleB, PoolAllocationChart } from '../svgs'
@@ -61,10 +62,10 @@ const StepCard: React.FC<{ step: Step }> = ({ step }) => {
   return (
     <StyledStepCard width="100%">
       <StepCardInner height={['200px', '180px', null, '200px']}>
-        <Text mb="16px" fontSize="12px" bold textAlign="right" textTransform="uppercase">
+        <Text mb="16px" fontSize="12px" bold style={{textAlign: 'right'}} textTransform="uppercase">
           {step.label}
         </Text>
-        <Heading mb="16px" scale="lg" color="secondary">
+        <Heading mb="16px" size="lg" color="secondary">
           {step.title}
         </Heading>
         <Text color="textSubtle">{step.subtitle}</Text>
@@ -123,13 +124,13 @@ const MatchExampleCard = () => {
         <MatchExampleContainer>
           <ExampleBalls />
           <Flex>
-            <Text lineHeight="72px" textAlign="right" color="secondary" bold mr="20px">
+            <Text style={{ lineHeight: '72px', textAlign: 'right' }} color="secondary" bold mr="20px">
               {t('A')}
             </Text>
             <MatchExampleA width={exampleWidth} height="46px" isDark={isDark} />
           </Flex>
           <Flex>
-            <Text lineHeight="72px" textAlign="right" color="secondary" bold mr="20px">
+            <Text style={{ lineHeight: '72px', textAlign: 'right' }} color="secondary" bold mr="20px">
               {t('B')}
             </Text>
             <MatchExampleB width={exampleWidth} height="46px" isDark={isDark} />
@@ -176,37 +177,37 @@ const PoolAllocations = () => {
           <Text fontSize="12px" color="secondary" bold textTransform="uppercase">
             {t('Digits matched')}
           </Text>
-          <Text fontSize="12px" color="secondary" bold textAlign="right" textTransform="uppercase">
+          <Text fontSize="12px" color="secondary" bold style={{ textAlign: 'right' }} textTransform="uppercase">
             {t('Prize pool allocation')}
           </Text>
         </Flex>
         <AllocationGrid>
           <AllocationMatch color="#FFE362" text={t('Matches first %digits%', { digits: 1 })} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             2%
           </Text>
           <AllocationMatch color="#85C54E" text={t('Matches first %digits%', { digits: 2 })} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             3%
           </Text>
           <AllocationMatch color="#028E75" text={t('Matches first %digits%', { digits: 3 })} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             5%
           </Text>
           <AllocationMatch color="#36E8F5" text={t('Matches first %digits%', { digits: 4 })} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             10%
           </Text>
           <AllocationMatch color="#A881FC" text={t('Matches first %digits%', { digits: 5 })} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             20%
           </Text>
           <AllocationMatch color="#D750B2" text={t('Matches all 6')} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             40%
           </Text>
           <AllocationMatch color="#BDC2C4" text={t('Burn Pool')} />
-          <Text textAlign="right" bold>
+          <Text style={{ textAlign: 'right' }} bold>
             20%
           </Text>
         </AllocationGrid>
@@ -242,10 +243,10 @@ const HowToPlay: React.FC = () => {
   return (
     <Box width="100%">
       <Flex mb="40px" alignItems="center" flexDirection="column">
-        <Heading mb="24px" scale="xl" color="secondary">
+        <Heading mb="24px" size="xl" color="secondary">
           {t('How to Play')}
         </Heading>
-        <Text textAlign="center">
+        <Text style={{ textAlign: 'center' }} >
           {t(
             'If the digits on your tickets match the winning numbers in the correct order, you win a portion of the prize pool.',
           )}
@@ -260,10 +261,10 @@ const HowToPlay: React.FC = () => {
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flex="2" flexDirection="column">
-          <Heading mb="24px" scale="lg" color="secondary">
+          <Heading mb="24px" size="lg" color="secondary">
             {t('Winning Criteria')}
           </Heading>
-          <Heading mb="24px" scale="md">
+          <Heading mb="24px" size="md">
             {t('The digits on your ticket must match in the correct order to win.')}
           </Heading>
           <Text mb="16px" color="textSubtle">
@@ -271,14 +272,14 @@ const HowToPlay: React.FC = () => {
           </Text>
           <BulletList>
             <li>
-              <Text display="inline" color="textSubtle">
+              <Text style={{display: 'inline'}} color="textSubtle">
                 {t(
                   'Ticket A: The first 3 digits and the last 2 digits match, but the 4th digit is wrong, so this ticket only wins a “Match first 3” prize.',
                 )}
               </Text>
             </li>
             <li>
-              <Text display="inline" color="textSubtle">
+              <Text style={{display: 'inline'}} color="textSubtle">
                 {t(
                   'Ticket B: Even though the last 5 digits match, the first digit is wrong, so this ticket doesn’t win a prize.',
                 )}
@@ -298,38 +299,38 @@ const HowToPlay: React.FC = () => {
       <Divider />
       <GappedFlex flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flex="2" flexDirection="column">
-          <Heading mb="24px" scale="lg" color="secondary">
+          <Heading mb="24px" size="lg" color="secondary">
             {t('Prize Funds')}
           </Heading>
           <Text color="textSubtle">{t('The prizes for each lottery round come from three sources:')}</Text>
-          <Heading my="16px" scale="md">
+          <Heading my="16px" size="md">
             {t('Ticket Purchases')}
           </Heading>
           <BulletList>
             <li>
-              <Text display="inline" color="textSubtle">
+              <Text style={{display: 'inline'}} color="textSubtle">
                 {t('100% of the CAKE paid by people buying tickets that round goes back into the prize pools.')}
               </Text>
             </li>
           </BulletList>
-          <Heading my="16px" scale="md">
+          <Heading my="16px" size="md">
             {t('Rollover Prizes')}
           </Heading>
           <BulletList>
             <li>
-              <Text display="inline" color="textSubtle">
+              <Text style={{display: 'inline'}} color="textSubtle">
                 {t(
                   'After every round, if nobody wins in one of the prize brackets, the unclaimed CAKE for that bracket rolls over into the next round and are redistributed among the prize pools.',
                 )}
               </Text>
             </li>
           </BulletList>
-          <Heading my="16px" scale="md">
+          <Heading my="16px" size="md">
             {t('CAKE Injections')}
           </Heading>
           <BulletList>
             <li>
-              <Text display="inline" color="textSubtle">
+              <Text style={{display: 'inline'}} color="textSubtle">
                 {t(
                   'An average total of 35,000 CAKE from the treasury is added to lottery rounds over the course of a week. This CAKE is of course also included in rollovers! Read more in our guide to ',
                 )}
@@ -347,8 +348,8 @@ const HowToPlay: React.FC = () => {
       <Divider />
       <Flex justifyContent="center" alignItems="center" flexDirection={['column', 'column', 'row']}>
         <Image width={240} height={172} src="/images/lottery/tombola.png" alt="tombola bunny" mr="8px" mb="16px" />
-        <Flex maxWidth="300px" flexDirection="column">
-          <Heading mb="16px" scale="md">
+        <Flex style={{ maxWidth: '300px' }} flexDirection="column">
+          <Heading mb="16px" size="md">
             {t('Still got questions?')}
           </Heading>
           <Text>
