@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Box, Text } from '@pancakeswap/uikit'
+import { Box } from '@pancakeswap/uikit'
+import { Flex, Text } from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryStatus } from 'config/constants/types'
 import { useLottery } from 'state/lottery/hooks'
@@ -46,7 +47,7 @@ const CurrentRoundTicketsInner = () => {
           })}
         </ScrollBox>
       </Flex>
-      <Flex borderTop={`1px solid ${theme.colors.cardBorder}`} alignItems="center" justifyContent="center">
+      <Flex style={{borderTop: `1px solid ${theme.colors.cardBorder}`, alignItems: 'center', justifyContent: 'center'}} >
         <BuyTicketsButton disabled={ticketBuyIsDisabled} mt="24px" width="100%" />
       </Flex>
     </>

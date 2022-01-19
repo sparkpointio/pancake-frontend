@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import { Text, Flex, ChevronRightIcon, Box, SmallDotIcon, PrizeIcon } from '@pancakeswap/uikit'
+import {  Box, SmallDotIcon, PrizeIcon } from '@pancakeswap/uikit'
+import { Text, Flex, ChevronRightIcon } from '@sparkpointio/sparkswap-uikit'
 import { dateOptions, timeOptions } from '../../helpers'
 
 interface FinishedRoundRowProps {
