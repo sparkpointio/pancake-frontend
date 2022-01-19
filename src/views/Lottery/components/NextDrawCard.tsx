@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Box, CardFooter, ExpandableLabel } from '@pancakeswap/uikit'
+import { Box, ExpandableLabel } from '@pancakeswap/uikit'
 import {
   Card,
   CardHeader,
@@ -11,6 +11,7 @@ import {
   Skeleton,
   Button,
   useModal,
+  CardFooter
 } from '@sparkpointio/sparkswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { LotteryStatus } from 'config/constants/types'
