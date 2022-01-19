@@ -13,7 +13,14 @@ const StyledButton = styled(Button)`
 
 const NumTicketsToBuyButton: React.FC<NumTicketsToBuyButtonProps> = ({ children, onClick, disabled = false }) => {
   return (
-    <StyledButton disabled={disabled} style={{scale: 'xs'}} mx="2px" p="4px 16px" variant="tertiary" onClick={onClick}>
+    <StyledButton
+      disabled={disabled}
+      style={{ scale: 'xs' }}
+      mx="2px"
+      p="4px 16px"
+      variant="tertiary"
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   )

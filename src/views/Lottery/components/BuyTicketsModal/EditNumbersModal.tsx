@@ -53,7 +53,13 @@ const EditNumbersModal: React.FC<{
             'Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9',
           )}
         </Text>
-        <Button disabled={isConfirming} mb="16px" variant="secondary" style={{width: '100%', height: '32px'}} onClick={randomize}>
+        <Button
+          disabled={isConfirming}
+          mb="16px"
+          variant="secondary"
+          style={{ width: '100%', height: '32px' }}
+          onClick={randomize}
+        >
           {t('Randomize')}
         </Button>
         {tickets.map((ticket) => (
