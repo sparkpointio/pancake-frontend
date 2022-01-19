@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IconButton, ArrowForwardIcon, ArrowBackIcon, ArrowLastIcon, Flex, Heading, Input } from '@pancakeswap/uikit'
+import { ArrowLastIcon } from '@pancakeswap/uikit'
+import { IconButton, ArrowForwardIcon, ArrowBackIcon, Flex, Heading, Input } from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledInput = styled(Input)`
@@ -69,7 +70,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           disabled={!selectedRoundIdAsInt || selectedRoundIdAsInt <= 1}
           onClick={() => handleArrowButtonPress(selectedRoundIdAsInt - 1)}
           variant="text"
-          scale="sm"
+          size="sm"
           mr="4px"
         >
           <ArrowBackIcon />
@@ -78,7 +79,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           disabled={selectedRoundIdAsInt >= mostRecentRound}
           onClick={() => handleArrowButtonPress(selectedRoundIdAsInt + 1)}
           variant="text"
-          scale="sm"
+          size="sm"
           mr="4px"
         >
           <ArrowForwardIcon />
@@ -87,7 +88,7 @@ const RoundSwitcher: React.FC<RoundSwitcherProps> = ({
           disabled={selectedRoundIdAsInt >= mostRecentRound}
           onClick={() => handleArrowButtonPress(mostRecentRound)}
           variant="text"
-          scale="sm"
+          size="sm"
         >
           <ArrowLastIcon />
         </StyledIconButton>

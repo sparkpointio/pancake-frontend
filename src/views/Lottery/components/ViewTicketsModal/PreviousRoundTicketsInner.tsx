@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import {
   Box,
+  PresentWonIcon,
+  TooltipText,
+  useTooltip,
+} from '@pancakeswap/uikit'
+import {
   Text,
   Flex,
   Button,
   Skeleton,
   Ticket,
-  PresentWonIcon,
-  TooltipText,
   InfoIcon,
-  useTooltip,
   useModal,
-} from '@pancakeswap/uikit'
+} from '@sparkpointio/sparkswap-uikit'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
 import { LotteryTicket, LotteryTicketClaimData } from 'config/constants/types'
@@ -145,7 +147,7 @@ const PreviousRoundTicketsInner: React.FC<{ roundId: string }> = ({ roundId }) =
   const getFooter = () => {
     if (userWinningTickets?.ticketsWithUnclaimedRewards?.length > 0) {
       return (
-        <Button onClick={onPresentClaimModal} mt="24px" width="100%">
+        <Button onClick={onPresentClaimModal} mt="24px" style={{width: '100%'}}>
           {t('Collect Prizes')}
         </Button>
       )
@@ -227,7 +229,7 @@ const PreviousRoundTicketsInner: React.FC<{ roundId: string }> = ({ roundId }) =
           </>
         )}
       </ScrollBox>
-      <Flex borderTop={`1px solid ${theme.colors.cardBorder}`} alignItems="center" justifyContent="center">
+      <Flex style={{borderTop: `1px solid ${theme.colors.cardBorder}`}} alignItems="center" justifyContent="center">
         {userWinningTickets.isFetched && getFooter()}
       </Flex>
     </>

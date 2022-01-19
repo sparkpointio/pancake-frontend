@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading } from '@pancakeswap/uikit'
+import { Flex, Heading } from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 export interface TimerProps {
@@ -29,7 +29,7 @@ const Wrapper: React.FC<TimerProps> = ({ minutes, hours, days }) => {
     <StyledTimerFlex alignItems="flex-end">
       {Boolean(days) && (
         <>
-          <StyledTimerText mb="-4px" scale="xl" mr="4px">
+          <StyledTimerText mb="-4px" size="xl" mr="4px">
             {days}
           </StyledTimerText>
           <StyledTimerText mr="12px">{t('d')}</StyledTimerText>
@@ -37,7 +37,7 @@ const Wrapper: React.FC<TimerProps> = ({ minutes, hours, days }) => {
       )}
       {Boolean(hours) && (
         <>
-          <StyledTimerText mb="-4px" scale="xl" mr="4px">
+          <StyledTimerText mb="-4px" size="xl" mr="4px">
             {hours}
           </StyledTimerText>
           <StyledTimerText mr="12px">{t('h')}</StyledTimerText>
@@ -45,7 +45,7 @@ const Wrapper: React.FC<TimerProps> = ({ minutes, hours, days }) => {
       )}
       {Boolean(minutes) && (
         <>
-          <StyledTimerText mb="-4px" scale="xl" mr="4px">
+          <StyledTimerText mb="-4px" size="xl" mr="4px">
             {minutes}
           </StyledTimerText>
           <StyledTimerText mr="12px">{t('m')}</StyledTimerText>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Flex, Button, Text, AutoRenewIcon, PresentWonIcon } from '@pancakeswap/uikit'
+import { PresentWonIcon, Text } from '@pancakeswap/uikit'
+import { Flex, Button, AutoRenewIcon} from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryTicket, LotteryTicketClaimData } from 'config/constants/types'
 import { getBalanceAmount } from 'utils/formatBalance'
@@ -211,7 +212,7 @@ const ClaimInnerContainer: React.FC<ClaimInnerProps> = ({ onSuccess, roundsToCla
           isLoading={pendingTx}
           endIcon={pendingTx ? <AutoRenewIcon spin color="currentColor" /> : null}
           mt="20px"
-          width="100%"
+          style={{width: '100%'}}
           onClick={() => (shouldBatchRequest ? handleBatchClaim() : handleClaim())}
         >
           {pendingTx ? t('Claiming') : t('Claim')} {pendingBatchClaims > 1 ? `(${pendingBatchClaims})` : ''}
