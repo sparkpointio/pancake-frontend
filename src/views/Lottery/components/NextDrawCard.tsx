@@ -11,7 +11,7 @@ import {
   Skeleton,
   Button,
   useModal,
-  CardFooter
+  CardFooter,
 } from '@sparkpointio/sparkswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { LotteryStatus } from 'config/constants/types'

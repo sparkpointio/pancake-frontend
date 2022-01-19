@@ -7,7 +7,7 @@ const HistoryTabMenu = ({ setActiveIndex, activeIndex }) => {
 
   return (
     // <ButtonMenu activeIndex={activeIndex} onItemClick={setActiveIndex} scale="sm" variant="subtle">
-      <ButtonMenu activeIndex={activeIndex} onClick={setActiveIndex} size="sm" variant="subtle">
+    <ButtonMenu activeIndex={activeIndex} onClick={setActiveIndex} size="sm" variant="subtle">
       <ButtonMenuItem>{t('All History')}</ButtonMenuItem>
       <ButtonMenuItem>{t('Your History')}</ButtonMenuItem>
     </ButtonMenu>

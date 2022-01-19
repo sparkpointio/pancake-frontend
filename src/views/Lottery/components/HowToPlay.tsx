@@ -62,7 +62,7 @@ const StepCard: React.FC<{ step: Step }> = ({ step }) => {
   return (
     <StyledStepCard width="100%">
       <StepCardInner height={['200px', '180px', null, '200px']}>
-        <Text mb="16px" fontSize="12px" bold style={{textAlign: 'right'}} textTransform="uppercase">
+        <Text mb="16px" fontSize="12px" bold style={{ textAlign: 'right' }} textTransform="uppercase">
           {step.label}
         </Text>
         <Heading mb="16px" size="lg" color="secondary">
@@ -246,7 +246,7 @@ const HowToPlay: React.FC = () => {
         <Heading mb="24px" size="xl" color="secondary">
           {t('How to Play')}
         </Heading>
-        <Text style={{ textAlign: 'center' }} >
+        <Text style={{ textAlign: 'center' }}>
           {t(
             'If the digits on your tickets match the winning numbers in the correct order, you win a portion of the prize pool.',
           )}
@@ -272,14 +272,14 @@ const HowToPlay: React.FC = () => {
           </Text>
           <BulletList>
             <li>
-              <Text style={{display: 'inline'}} color="textSubtle">
+              <Text style={{ display: 'inline' }} color="textSubtle">
                 {t(
                   'Ticket A: The first 3 digits and the last 2 digits match, but the 4th digit is wrong, so this ticket only wins a “Match first 3” prize.',
                 )}
               </Text>
             </li>
             <li>
-              <Text style={{display: 'inline'}} color="textSubtle">
+              <Text style={{ display: 'inline' }} color="textSubtle">
                 {t(
                   'Ticket B: Even though the last 5 digits match, the first digit is wrong, so this ticket doesn’t win a prize.',
                 )}
@@ -308,7 +308,7 @@ const HowToPlay: React.FC = () => {
           </Heading>
           <BulletList>
             <li>
-              <Text style={{display: 'inline'}} color="textSubtle">
+              <Text style={{ display: 'inline' }} color="textSubtle">
                 {t('100% of the CAKE paid by people buying tickets that round goes back into the prize pools.')}
               </Text>
             </li>
@@ -318,7 +318,7 @@ const HowToPlay: React.FC = () => {
           </Heading>
           <BulletList>
             <li>
-              <Text style={{display: 'inline'}} color="textSubtle">
+              <Text style={{ display: 'inline' }} color="textSubtle">
                 {t(
                   'After every round, if nobody wins in one of the prize brackets, the unclaimed CAKE for that bracket rolls over into the next round and are redistributed among the prize pools.',
                 )}
@@ -330,7 +330,7 @@ const HowToPlay: React.FC = () => {
           </Heading>
           <BulletList>
             <li>
-              <Text style={{display: 'inline'}} color="textSubtle">
+              <Text style={{ display: 'inline' }} color="textSubtle">
                 {t(
                   'An average total of 35,000 CAKE from the treasury is added to lottery rounds over the course of a week. This CAKE is of course also included in rollovers! Read more in our guide to ',
                 )}
