@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import {
-  Box,
-  CardFooter,
-  ExpandableLabel,
-} from '@pancakeswap/uikit'
+import { Box, CardFooter, ExpandableLabel } from '@pancakeswap/uikit'
 import {
   Card,
   CardHeader,
@@ -79,7 +75,7 @@ const NextDrawCard = () => {
     if (status === LotteryStatus.CLOSE || status === LotteryStatus.CLAIMABLE) {
       return (
         // <Heading size="xl" color="secondary" textAlign={['center', null, null, 'left']}>
-          <Heading size="xl" color="secondary">
+        <Heading size="xl" color="secondary">
           {t('Calculating')}...
         </Heading>
       )
@@ -181,7 +177,7 @@ const NextDrawCard = () => {
                 {!userTickets.isLoading && userTicketCount > 0 && (
                   <Button
                     onClick={onPresentViewTicketsModal}
-                    style={{height: 'auto', width: 'fit-content'}}
+                    style={{ height: 'auto', width: 'fit-content' }}
                     // height="auto"
                     // width="fit-content"
                     p="0"
