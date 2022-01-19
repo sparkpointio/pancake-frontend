@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  Box,
-  BunnyPlaceholderIcon,
-} from '@pancakeswap/uikit'
+import { Box, BunnyPlaceholderIcon } from '@pancakeswap/uikit'
 import {
   CardBody,
   Heading,
@@ -87,7 +84,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
         <Flex justifyContent={['center', null, null, 'flex-start']}>
           <Heading mb="24px">{t('Winning Number')}</Heading>
         </Flex>
-        <Flex style={{ maxWidth: '240px, null, null, 100%', justifyContent: 'center, null, null, flex-start' }} >
+        <Flex style={{ maxWidth: '240px, null, null, 100%', justifyContent: 'center, null, null, flex-start' }}>
           {lotteryId ? (
             lotteryNodeData ? (
               <WinningNumbers
@@ -106,7 +103,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
             )
           ) : (
             <>
-              <Flex flexDirection="column" alignItems="center" style={{ width: '240px, null, null, 480px'}} >
+              <Flex flexDirection="column" alignItems="center" style={{ width: '240px, null, null, 480px' }}>
                 <Text mb="8px">{t('Please specify Round')}</Text>
                 <BunnyPlaceholderIcon height="64px" width="64px" />
               </Flex>
@@ -124,7 +121,7 @@ const PreviousRoundCardBody: React.FC<{ lotteryNodeData: LotteryRound; lotteryId
               alignItems={['center', null, null, 'flex-start']}
             >
               <Box mt={['32px', null, null, 0]}>
-                <Text style={{ display: 'inline' }} >{youHadText} </Text>
+                <Text style={{ display: 'inline' }}>{youHadText} </Text>
                 <Text style={{ display: 'inline' }} bold>
                   {userDataForRound.totalTickets}
                 </Text>

@@ -48,7 +48,7 @@ const FinishedRoundTable: React.FC<FinishedRoundTableProps> = ({
         </Text>
         <Box width="20px" />
       </Grid>
-      <Flex px="24px" pb="24px" flexDirection="column" style={{overflowY: 'scroll', height: '240px'}}>
+      <Flex px="24px" pb="24px" flexDirection="column" style={{ overflowY: 'scroll', height: '240px' }}>
         {userLotteryData &&
           sortedByRoundId.map((finishedRound) => (
             <FinishedRoundRow
@@ -62,7 +62,7 @@ const FinishedRoundTable: React.FC<FinishedRoundTableProps> = ({
           ))}
         {userLotteryData?.rounds?.length === numUserRoundsRequested && (
           <Flex justifyContent="center">
-            <Button mt="12px" variant="text" style={{width: 'fit-content'}} onClick={handleShowMoreClick}>
+            <Button mt="12px" variant="text" style={{ width: 'fit-content' }} onClick={handleShowMoreClick}>
               {t('Show More')}
             </Button>
           </Flex>

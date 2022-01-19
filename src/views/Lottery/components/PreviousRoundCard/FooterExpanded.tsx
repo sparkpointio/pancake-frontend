@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Box} from '@pancakeswap/uikit'
+import { Box } from '@pancakeswap/uikit'
 import { Flex, Skeleton, Heading, Text } from '@sparkpointio/sparkswap-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LotteryRound, LotteryRoundGraphEntity } from 'state/types'
@@ -65,7 +65,7 @@ const PreviousRoundCardFooter: React.FC<{ lotteryNodeData: LotteryRound; lottery
         {prizeInBusd.isNaN() ? (
           <Skeleton my="7px" height={40} width={200} />
         ) : (
-          <Heading size="xl" style={{lineHeight: '1' }} color="secondary">
+          <Heading size="xl" style={{ lineHeight: '1' }} color="secondary">
             ~${formatNumber(getBalanceNumber(prizeInBusd), 0, 0)}
           </Heading>
         )}
@@ -93,7 +93,7 @@ const PreviousRoundCardFooter: React.FC<{ lotteryNodeData: LotteryRound; lottery
         </Box>
         <Box mb="24px">
           <Flex>
-            <Text fontSize="14px" style={{ display: 'inline' }} >
+            <Text fontSize="14px" style={{ display: 'inline' }}>
               {t('Total players this round')}:{' '}
               {lotteryNodeData && (lotteryGraphDataFromState || fetchedLotteryGraphData) ? (
                 getTotalUsers()
