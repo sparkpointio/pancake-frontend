@@ -15,7 +15,7 @@ function Updaters() {
   return (
     <>
       <ListsUpdater />
-      <TransactionUpdater />
+      <TransactionUpdater /> 
       <MulticallUpdater />
     </>
   )
