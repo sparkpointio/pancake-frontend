@@ -1,15 +1,15 @@
 import React from 'react'
-import { Button, useWalletModal } from '@pancakeswap/uikit'
+import { Button, useWalletModal } from '@sparkpointio/sparkswap-uikit'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
 
 const ConnectWalletButton = (props) => {
   const { t } = useTranslation()
   const { login, logout } = useAuth()
-  const { onPresentConnectModal } = useWalletModal(login, logout, t)
+  const { onPresentConnectModal } = useWalletModal(login, logout)
 
   return (
-    <Button onClick={onPresentConnectModal} {...props}>
+    <Button onClick={onPresentConnectModal} {...props} fullWidth>
       {t('Connect Wallet')}
     </Button>
   )
