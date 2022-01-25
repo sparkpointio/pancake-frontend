@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Svg, SvgProps, Text, Flex } from '@pancakeswap/uikit'
+import { Svg, SvgProps, Text, Flex } from '@sparkpointio/sparkswap-uikit'
 
 export const PinkBall: React.FC<SvgProps> = (props) => {
   return (
@@ -277,7 +277,7 @@ const ballsMap = {
 export const BallWithNumber: React.FC<BallWithNumberProps> = ({ color, number, size, fontSize, rotationTransform }) => {
   const BallComponent = ballsMap[color]
   return (
-    <Flex alignItems="center" justifyContent="center" position="relative" mx="2px">
+    <Flex alignItems="center" justifyContent="center" style={{ position: 'relative' }} mx="2px">
       <BallComponent width={size ?? '32px'} height={size ?? '32px'} />
       <BallTextWrapper>
         <BallText rotationTransform={rotationTransform} bold fontSize={fontSize ?? '16px'}>
