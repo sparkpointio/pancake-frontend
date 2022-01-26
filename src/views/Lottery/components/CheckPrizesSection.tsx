@@ -67,7 +67,7 @@ const CheckPrizesSection = () => {
     if (!account) {
       return (
         <Flex alignItems="center" justifyContent="center">
-          <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" />
+          {/* <TicketImage src="/images/lottery/ticket-l.png" alt="lottery ticket" /> */}
           <Flex mx={['4px', null, '16px']} flexDirection="column" alignItems="center">
             <Heading style={{ textAlign: 'center' }} color="#F4EEFF">
               {t('Connect your wallet')}
@@ -77,7 +77,7 @@ const CheckPrizesSection = () => {
             </Heading>
             <UnlockButton width="190px" />
           </Flex>
-          <TicketImage src="/images/lottery/ticket-r.png" alt="lottery ticket" />
+          {/* <TicketImage src="/images/lottery/ticket-r.png" alt="lottery ticket" /> */}
         </Flex>
       )
     }

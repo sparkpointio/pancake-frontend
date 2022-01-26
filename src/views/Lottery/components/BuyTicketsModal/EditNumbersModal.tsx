@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from '@pancakeswap/uikit'
+import { Modal } from '@pancakeswap/uikit'
+import { Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from '@sparkpointio/sparkswap-uikit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from 'contexts/Localization'
 import TicketInput from './TicketInput'
@@ -52,7 +53,13 @@ const EditNumbersModal: React.FC<{
             'Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9',
           )}
         </Text>
-        <Button disabled={isConfirming} mb="16px" variant="secondary" width="100%" height="32px" onClick={randomize}>
+        <Button
+          disabled={isConfirming}
+          mb="16px"
+          variant="secondary"
+          style={{ width: '100%', height: '32px' }}
+          onClick={randomize}
+        >
           {t('Randomize')}
         </Button>
         {tickets.map((ticket) => (

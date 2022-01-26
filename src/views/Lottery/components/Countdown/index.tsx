@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Skeleton } from '@pancakeswap/uikit'
+import { Flex, Heading, Skeleton } from '@sparkpointio/sparkswap-uikit'
 import getTimePeriods from 'utils/getTimePeriods'
 import Timer from './Timer'
 import useNextEventCountdown from '../../hooks/useNextEventCountdown'
@@ -17,7 +17,7 @@ const Countdown: React.FC<CountdownProps> = ({ nextEventTime, preCountdownText, 
   return (
     <>
       {secondsRemaining ? (
-        <Flex display="inline-flex" justifyContent="flex-end" alignItems="flex-end">
+        <Flex style={{ display: 'inline-flex' }} justifyContent="flex-end" alignItems="flex-end">
           {preCountdownText && (
             <Heading mr="12px" color="#ffff">
               {preCountdownText}

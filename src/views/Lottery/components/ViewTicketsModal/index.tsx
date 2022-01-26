@@ -30,6 +30,7 @@ const ViewTicketsModal: React.FC<ViewTicketsModalProps> = ({ onDismiss, roundId,
       title={`${t('Round')} ${roundId}`}
       onDismiss={onDismiss}
       headerBackground={theme.colors.gradients.cardHeader}
+      // Decided to keep pancake modal for now because current sparkswap ui kit modal has no prop for header background
     >
       {isPreviousRound ? <PreviousRoundTicketsInner roundId={roundId} /> : <CurrentRoundTicketsInner />}
     </StyledModal>
